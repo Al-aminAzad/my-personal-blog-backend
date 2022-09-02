@@ -5,7 +5,8 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 
 //File import
-import postRoutes from './routes/post.js'
+import postsRoutes from './routes/posts.js'
+import usersRoutes from './routes/users.js'
 
 
 //main app
@@ -19,7 +20,8 @@ app.use(bodyParser.json({limit:"30mb",extended:true}));
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}));
 app.use(cors());
 //Routes
-app.use('/posts', postRoutes);
+app.use('/posts', postsRoutes);
+app.use('/users', usersRoutes);
 
 // const CONNECTION_URL = 'mongodb+srv://alamin:alamin123@freecluster.ksjz7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
