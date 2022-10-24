@@ -23,6 +23,10 @@ app.use(cors());
 app.use('/posts', postsRoutes);
 app.use('/users', usersRoutes);
 
+app.get('/', (req,res)=>{
+    res.send('PING')
+})
+
 // const CONNECTION_URL = 'mongodb+srv://alamin:alamin123@freecluster.ksjz7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
 
